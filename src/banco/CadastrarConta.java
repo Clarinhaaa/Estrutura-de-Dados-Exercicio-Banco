@@ -13,6 +13,14 @@ public class CadastrarConta {
         }
     }
 
+    public void adicionarContaEsp(Conta con, int posicao) {
+        if (arrayCon[(arrayCon.length -1)] == null) {
+            
+        } else {
+            System.out.println("Vetor cheio!");
+        }
+    }
+
     public Conta[] listarConta() {
         return arrayCon;
     }

@@ -17,6 +17,10 @@ public class Principal {
         cadCon.adicionarConta(con3);
         cadCon.adicionarConta(con4);
 
+        //adição de contas em uma posição específica do array
+        Conta con5 = new Conta (5, "Enrico", 300.0);
+        cadCon.adicionarContaEsp(con5, 3);
+
         //imprimindo as contas cadastradas
         System.out.println(Arrays.toString(cadCon.listarConta()));
 
