@@ -1,13 +1,10 @@
 package banco;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class Principal {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
         CadastrarConta cadCon = new CadastrarConta();
-        String nome = "";
 
         //adicionando as contas no array
         Conta con1 = new Conta(1, "Clara", 100.0);
@@ -27,9 +24,6 @@ public class Principal {
         
         //sistema de busca de contas
         System.out.print("Coloque o nome da conta que deseja buscar: ");
-        nome = scan.nextLine();
-        cadCon.procurarConta(nome);
-
-        scan.close();
+        cadCon.procurarConta("Luiza");
     }
 }

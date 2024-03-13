@@ -21,8 +21,8 @@ public class CadastrarConta {
         boolean achou = false;
         
         for (int i = 0; i < arrayCon.length; i++) {
-            if (nome == arrayCon[i].getNome()) {
-                System.out.println("A conta é: " + arrayCon[i].toString());
+            if (nome.equals(arrayCon[i].getNome())) {
+                System.out.println("A conta buscada é: " + arrayCon[i].toString());
                 achou = true;
                 break;
             }
