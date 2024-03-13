@@ -19,7 +19,7 @@ public class Principal {
 
         //adição de contas em uma posição específica do array
         Conta con5 = new Conta (5, "Enrico", 300.0);
-        cadCon.adicionarContaEsp(con5, 3);
+        cadCon.adicionarContaEsp(con5, 0);
 
         //imprimindo as contas cadastradas
         System.out.println(Arrays.toString(cadCon.listarConta()));
@@ -28,6 +28,6 @@ public class Principal {
         
         //sistema de busca de contas
         System.out.print("Coloque o nome da conta que deseja buscar: ");
-        cadCon.procurarConta("Luiza");
+        cadCon.procurarConta("Clara");
     }
 }

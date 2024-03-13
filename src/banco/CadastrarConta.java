@@ -1,7 +1,8 @@
 package banco;
 
 public class CadastrarConta {
-    private Conta[] arrayCon = new Conta[5];
+    private int tamanho = 5;
+    private Conta[] arrayCon = new Conta[tamanho];
     private int index = 0;
 
     public void adicionarConta(Conta con) {
@@ -14,11 +15,16 @@ public class CadastrarConta {
     }
 
     public void adicionarContaEsp(Conta con, int posicao) {
-        if (arrayCon[(arrayCon.length -1)] == null) {
-            
+        tamanho++;
+        
+        /* if (arrayCon[arrayCon.length -1] == null) {
+            for (int i = arrayCon.length - 1; i > posicao; i--) {
+                arrayCon[i] = arrayCon[i - 1];
+            }
+            arrayCon[posicao] = con;
         } else {
             System.out.println("Vetor cheio!");
-        }
+        } */
     }
 
     public Conta[] listarConta() {
