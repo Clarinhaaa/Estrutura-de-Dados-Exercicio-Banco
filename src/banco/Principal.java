@@ -30,6 +30,6 @@ public class Principal {
         
         //sistema de busca de contas
         System.out.print("Coloque o nome da conta que deseja buscar: ");
-        cadCon.procurarConta("Cauã");
+        cadCon.procurarConta("Enrico");
     }
 }
