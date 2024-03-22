@@ -15,14 +15,23 @@ public class CadastrarConta {
     }
 
     public void adicionarContaEsp(Conta con, int posicao) {
-        if (arrayCon[arrayCon.length -1] == null) {
-            for (int i = arrayCon.length - 1; i > posicao; i--) {
+        if (arrayCon[index] == null) {
+            for (int i = index; i > posicao; i--) {
                 arrayCon[i] = arrayCon[i - 1];
             }
             arrayCon[posicao] = con;
+            index++;
         } else {
             System.out.println("Vetor cheio!");
         }
+    }
+
+    public void excluirContaEsp(int posicao) {
+        for (int i = posicao; i < index - 1; i++) {
+            arrayCon[i] = arrayCon[i + 1];
+        }
+        index--;
+        arrayCon[index] = null;
     }
 
     public Conta[] listarConta() {
