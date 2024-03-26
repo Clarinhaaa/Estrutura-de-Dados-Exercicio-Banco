@@ -1,37 +1,42 @@
 package banco;
 
 public class CadastrarConta {
-    private int tamanho = 5;
-    private Conta[] arrayCon = new Conta[tamanho];
-    private int index = 0;
+    private Conta[] arrayCon = new Conta[5];
+    private int totalContas = 0;
 
     public void adicionarConta(Conta con) {
-        if (index < arrayCon.length) {
-            arrayCon[index] = con;
-            index++;
-        } else {
-            System.out.println("Vetor cheio!");
-        }
+        arrayCon = aumentarArray(arrayCon);
+        arrayCon[totalContas] = con;
+        totalContas++;
     }
 
     public void adicionarContaEsp(Conta con, int posicao) {
-        if (arrayCon[index] == null) {
-            for (int i = this.index; i > posicao; i--) {
-                arrayCon[i] = arrayCon[i--];
-            }
-            arrayCon[posicao] = con;
-            index++;
-        } else {
-            System.out.println("Vetor cheio!");
+        arrayCon = aumentarArray(arrayCon);
+        for (int i = this.totalContas; i > posicao; i--) {
+            arrayCon[i] = arrayCon[i - 1];
         }
+        arrayCon[posicao] = con;
+        totalContas++;
+    }
+
+    public Conta[] aumentarArray(Conta[] arrayCon) {
+        Conta[] novoArray = new Conta[arrayCon.length + 5];
+
+        if (arrayCon[arrayCon.length - 1] == null) {
+            return arrayCon;
+        } else {
+            System.arraycopy(arrayCon, 0, novoArray, 0, totalContas);
+        }
+
+        return novoArray;
     }
 
     public void excluirContaEsp(int posicao) {
-        for (int i = posicao; i < this.index - 1; i++) {
-            arrayCon[i] = arrayCon[i++];
+        for (int i = posicao; i < this.totalContas - 1; i++) {
+            arrayCon[i] = arrayCon[i + 1];
         }
-        index--;
-        arrayCon[index] = null;
+        totalContas--;
+        arrayCon[totalContas] = null;
     }
 
     public Conta[] listarConta() {
@@ -41,12 +46,9 @@ public class CadastrarConta {
     public void procurarConta(String nome) {
         boolean achou = false;
         
-        for (int i = 0; i < this.index; i++) {
+        for (int i = 0; i < this.totalContas; i++) {
             if (nome.equals(arrayCon[i].getNome())) {
                 System.out.println("A conta buscada é: " + arrayCon[i].toString());
-                if (arrayCon[i].getNome().equals("Enrico")) {
-                    System.out.println("Pague os 300 pra Junio pelo amor de Deus");
-                }
                 achou = true;
                 break;
             }
