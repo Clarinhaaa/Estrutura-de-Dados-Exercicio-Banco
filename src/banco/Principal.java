@@ -32,5 +32,7 @@ public class Principal {
         //sistema de busca de contas
         System.out.print("Coloque o nome da conta que deseja buscar: ");
         cadCon.procurarConta("Thiago");
+
+        System.out.println("Quantas contas estão cadastradas: " + cadCon.size());
     }
 }
