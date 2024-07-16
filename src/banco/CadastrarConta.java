@@ -1,7 +1,7 @@
 package banco;
 
 public class CadastrarConta {
-    //ArrayList
+    // ArrayList
 
     private Conta[] arrayCon = new Conta[5];
     private int totalContas = 0;
@@ -16,7 +16,7 @@ public class CadastrarConta {
         if (!verificarPosicaoAdicionar(posicao)) {
             throw new IllegalArgumentException("Posição inválida");
         }
-        
+
         aumentarArray(arrayCon);
         for (int i = this.totalContas; i > posicao; i--) {
             arrayCon[i] = arrayCon[i - 1];
@@ -37,7 +37,7 @@ public class CadastrarConta {
         if (!verificarPosicaoExcluir(posicao)) {
             throw new IllegalArgumentException("Posição inválida");
         }
-        
+
         for (int i = posicao; i < this.totalContas - 1; i++) {
             arrayCon[i] = arrayCon[i + 1];
         }
@@ -51,7 +51,7 @@ public class CadastrarConta {
 
     public void procurarConta(String nome) {
         boolean achou = false;
-        
+
         for (Conta con : arrayCon) {
             if (nome.equals(con.getNome())) {
                 System.out.println("A conta buscada é: " + con.toString());
@@ -77,7 +77,7 @@ public class CadastrarConta {
         return posicao >= 0 && posicao <= this.totalContas;
     }
 
-    public void size() {
+    public int size() {
         return this.totalContas;
     }
 }

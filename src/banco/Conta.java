@@ -42,6 +42,6 @@ public class Conta {
 
     @Override
     public String toString() {
-        return "Conta [id=" + id + ", nome=" + nome + ", valor=" + valor + "]";
+        return "Conta [id=" + id + ", nome=" + nome + ", valor=" + valor + "]\n";
     }
 }
