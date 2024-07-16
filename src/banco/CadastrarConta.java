@@ -52,9 +52,9 @@ public class CadastrarConta {
     public void procurarConta(String nome) {
         boolean achou = false;
         
-        for (int i = 0; i < this.totalContas; i++) {
-            if (nome.equals(arrayCon[i].getNome())) {
-                System.out.println("A conta buscada é: " + arrayCon[i].toString());
+        for (Conta con : arrayCon) {
+            if (nome.equals(con.getNome())) {
+                System.out.println("A conta buscada é: " + con.toString());
                 achou = true;
                 break;
             }
@@ -78,6 +78,6 @@ public class CadastrarConta {
     }
 
     public void size() {
-        return this.totalContas - 1;
+        return this.totalContas;
     }
 }
